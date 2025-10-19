@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 
 from models import UserResponse,UserCreate
 
@@ -43,6 +43,10 @@ class UserRepository:
              if user.email == email:
                  return user
          return None
+
+    def get_all_users(self, limit:int, offset:intgit )->List[UserResponse]:
+        users = list(self.__data.values())
+        return users[offset:offset +limit]
 
 
 

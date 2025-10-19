@@ -22,6 +22,8 @@ class UserService:
         return self.user_repository.create_user(user_data)
 
     def get_user(self, id:int)-> Optional[UserResponse]:
-
         return self.user_repository.get_user_by_id(id)
+
+    def get_all_users(self,limit:int=10, offset:int=0):
+        return self.user_repository.get_all_users(limit, offset)
 
